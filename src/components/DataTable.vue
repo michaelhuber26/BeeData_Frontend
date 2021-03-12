@@ -2,14 +2,15 @@
   <div>
     <h1>Data from MongoDB:</h1>
     <p class="error" v-if="error">{{ error }}</p>
+    <button @click="allCol = !allCol">Show/Hide all Columns</button>
     <table class="styled-table">
       <thead>
         <tr>
-          <th>ID (in DB)</th>
-          <th>Node</th>
-          <th>Temp[°C]</th>
-          <th>Luftfeuchte[%]</th>
-          <th>Luftdruck[hPa]</th>
+          <th v-show="allCol">ID (in DB)</th>
+          <th v-show="allCol">Node</th>
+          <th>Temp [°C]</th>
+          <th>Luftfeuchte [%]</th>
+          <th>Luftdruck [hPa]</th>
           <th>Messzeitpunkt</th>
           <th>Messdatum</th>
         </tr>
@@ -20,8 +21,8 @@
           v-bind:item="data"
           v-bind:key="data._id"
         >
-          <td>{{ data._id }}</td>
-          <td>{{ data.device_id }}</td>
+          <td v-show="allCol">{{ data._id }}</td>
+          <td v-show="allCol">{{ data.device_id }}</td>
           <td>{{ data.temp }}</td>
           <td>{{ data.hum }}</td>
           <td>{{ data.press / 1000 }}</td>
@@ -60,6 +61,7 @@ export default {
       data: [],
       error: "",
       text: "",
+      allCol: false,
     };
   },
   async created() {
@@ -104,5 +106,26 @@ export default {
 .styled-table tbody tr.active-row {
   font-weight: bold;
   color: #f3e34c;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.63em;
+    font-family: sans-serif;
+    /* min-width: 45%; */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  .styled-table th,
+  .styled-table td {
+    padding: 7px 10px;
+  }
+  h1 {
+    font-size: 50px;
+  }
 }
 </style>

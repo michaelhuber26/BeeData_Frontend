@@ -12,9 +12,8 @@
           src="./assets/icon_Schrift.png"
           alt="BeeData Schrift"
           class="schrift"
-        />
-      </router-link>
-      | <router-link to="/about">About</router-link> |
+        /> </router-link
+      >| <router-link to="/about">About</router-link> |
       <router-link to="/data">Data</router-link> |
       <router-link to="/charts">Charts</router-link>
     </div>
@@ -34,7 +33,7 @@
 
 #nav {
   padding-left: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
   /* background: #eee; */
 }
 
@@ -64,6 +63,20 @@ h1 {
   text-align: center;
   text-transform: uppercase;
 }
+h2 {
+  color: black;
+  font-family: "Raleway", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  text-align: center;
+}
+h3 {
+  color: black;
+  font-family: "Raleway", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
 .navtext .schrift {
   position: relative;
   top: 0;
@@ -71,5 +84,23 @@ h1 {
   margin: 0;
   height: 20px;
   vertical-align: middle;
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  /* delete icon */
+  #nav #logo img {
+    width: 0;
+    height: 0;
+  }
+  #nav {
+    padding-bottom: 50px;
+  }
+  #nav .navtext {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin-top: 4%;
+    margin-bottom: 4%;
+  }
 }
 </style>

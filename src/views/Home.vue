@@ -1,6 +1,6 @@
 <template>
-  <h1>BeeData</h1>
   <div id="bg">
+    <h1></h1>
     <img alt="logo" src="../assets/logo.png" />
   </div>
 </template>
@@ -21,5 +21,12 @@ img {
 #bg {
   width: 100%;
   height: auto;
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 </style>
