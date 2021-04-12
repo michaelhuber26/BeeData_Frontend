@@ -20,6 +20,15 @@
   </div>
 
   <router-view />
+
+  <footer>
+    <div class="footer-bottom">
+      <p>
+        &copy; 2021 BeeData Diplomarbeit Michael Huber / Andreas Gahr
+        <b> All Rights reserved</b>
+      </p>
+    </div>
+  </footer>
 </template>
 
 <style>

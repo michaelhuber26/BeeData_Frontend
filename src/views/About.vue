@@ -15,6 +15,17 @@
         <h2></h2>
         <h3>Wieso BeeData?</h3>
         <p>
+          Die Digitalisierung bringt auch bei klassisch-traditionellen Arbeiten,
+          wie der Imkerei, Vorteile. Die vorliegende Diplomarbeit bietet, mit
+          dem Projekt BeeData, Imkern einen einfacheren Alltag. Ermöglicht wird
+          dies durch eine übersichtliche Darstellung verschiedener Sensordaten
+          zur Kontrolle der Gesundheit des Bienenvolkes. Diese Daten werden zur
+          besseren Vorstellung über ein Zeitdiagramm dargestellt, welche per App
+          oder Website jederzeit verfügbar sind. Die Energieeffizienz der
+          Sensoren spielt ebenfalls eine wichtige Rolle, nämlich den
+          Wartungsaufwand des Projektes im Betrieb möglichst gering zu halten.
+        </p>
+        <p>
           Zur Überwachung von Bienenstöcken müssen Imker immer Vorort die
           Gesundheit der Bienenvölker kontrollieren. Mithilfe von BeeData soll
           das Leben der Bienen und des Imkers verbessert werden. Durch BeeData
@@ -27,6 +38,20 @@
           diverser Daten zu überprüfen. Die Daten sollten einfach und
           übersichtlich dargestellt werden. Die Datenübertragung erfolgt über
           das Netzwerkprotokoll LoRa.
+        </p>
+        <p>
+          Die Bienenüberwachungsanlage besteht aus mehreren Komponenten, zu
+          Beginn werden Temperatur-, Luftfeuchtigkeit- und Gewichtsdaten durch
+          Sensoren ausgelesen. Diese Daten werden hardwaretechnisch an den
+          Mikrochip ESP32 mittels I²C übertragen. Die Daten werden daraufhin zu
+          einem LoRa-Gateway gesendet. Das Gateway besteht aus dem iC880A
+          Empfangs- und Sendeboard und dem Raspberry Pi 3, welcher für die
+          Verarbeitung der Daten und Weiterleitung an den LoRaWAN-Server, in
+          diesem Fall das TTN Netzwerk verantwortlich ist, das TTN Netzwerk ist
+          ein öffentliches globales LoRaWAN Netzwerk. Die Daten werden auf der
+          Datenbank von MongoDB gespeichert und sind über HTTP-Request
+          verfügbar, für die Darstellung der Daten mit Diagrammen per App oder
+          Website.
         </p>
         <h3>Lösung</h3>
         <p>
